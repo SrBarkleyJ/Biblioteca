@@ -1,0 +1,47 @@
+<div class="container-main"> 
+  <div class="animation-section">
+    <h2>Cartas con efecto 3D</h2>
+<div class="wrapper">
+  @for (item of imagenes; track $index) {
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <!-- Frente de la carta -->
+        <div class="flip-card-front">
+          <img [src]="item.image" [alt]="item.name" class="img-fluid"/>
+        </div>
+        
+        <!-- Reverso de la carta -->
+        <div class="flip-card-back">
+          <h3>{{ item.name }}</h3>
+          <p>Texto descriptivo sobre {{ item.name }}</p>
+          <button class="btn-info">Más info</button>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+</div>
+  <!-- Sección derecha - Carrusel de Capturas -->
+  <div class="capturas-sidebar">
+    <h3>Código Fuente</h3>
+    <div class="capturas-vertical">
+      <div class="captura-item" 
+           *ngFor="let captura of capturas; let i = index"
+           [class.active]="capturaSeleccionada === i"
+           (click)="seleccionarCaptura(i)">
+        <img [src]="captura.src" 
+             [alt]="captura.alt"
+             class="captura-thumb"/>
+        <span class="captura-label">{{ captura.label }}</span>
+      </div>
+    </div>
+    
+    <!-- Vista ampliada de la captura seleccionada -->
+    <div class="captura-ampliada" *ngIf="capturaSeleccionada !== null">
+      <img [src]="capturas[capturaSeleccionada!].src" 
+           [alt]="capturas[capturaSeleccionada!].alt"
+           class="captura-grande"/>
+      <button class="btn-cerrar" (click)="cerrarCaptura()">×</button>
+    </div>
+  </div>
+</div>

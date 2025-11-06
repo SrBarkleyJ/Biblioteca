@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.main-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+/* Esto hace que el router-outlet ocupe el espacio restante */
+router-outlet {
+  display: block;
+  flex: 1;
+}
+
+/* O si prefieres un contenedor flex */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-footer {
+  background: #f8f9fa;
+  padding: 2rem 0;
+  text-align: center;
+  color: #666;
+  border-top: 1px solid #e9ecef;
+  margin-top: auto; /* Empuja el footer hacia abajo */
+}
