@@ -32,9 +32,7 @@ export class C2 {
   capturas: CapturaItem[] = [
     { src: 'assets/imagenes/code2html1.png', alt: 'Código HTML', label: 'HTML' },
     { src: 'assets/imagenes/code2css1.png', alt: 'CSS Parte 1', label: 'CSS 1' },
-    { src: 'assets/imagenes/code2css2.png', alt: 'CSS Parte 2', label: 'CSS 2' },
-     { src: 'assets/imagenes/code2css3.png', alt: 'CSS Parte 3', label: 'CSS 3' },
-    { src: 'assets/imagenes/code2ts.png', alt: 'TypeScript', label: 'TypeScript' }
+    { src: 'assets/imagenes/code2css2.png', alt: 'CSS Parte 2', label: 'CSS 2' }
   ];
 
   capturaSeleccionada: number | null = null;
