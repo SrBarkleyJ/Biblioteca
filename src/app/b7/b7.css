@@ -21,13 +21,13 @@ h2{
 
 .social-icon {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #1a1a1a;
-    border-radius: 30px;
+    border-radius: 35px;
     transition: all 0.3s ease;
     cursor: pointer;
     border: 0px solid #444;

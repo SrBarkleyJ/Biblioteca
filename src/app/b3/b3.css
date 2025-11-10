@@ -27,17 +27,17 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #2d2d2d;
+  background: #2d2d2d00;
   border-radius: 35px;
   transition: all 0.3s ease;
   cursor: pointer;
-  border: 2px solid #444;
-  overflow: visible; /* Cambiado a visible para el tooltip */
+  border: 0px solid #444;
+  overflow:visible; /* Cambiado a visible para el tooltip */
 }
 
 .social-icon i {
   font-size: 1.8rem;
-  color: #888;
+  color: #888888;
   transition: all 0.3s ease;
   z-index: 3; /* Icono por encima de todo */
   position: relative;
