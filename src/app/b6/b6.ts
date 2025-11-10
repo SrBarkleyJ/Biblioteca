@@ -1,8 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import {CdkDrag, CdkDragEnd, DragDropModule} from '@angular/cdk/drag-drop';
+import {CdkDragEnd, DragDropModule} from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-b6',
-  imports: [DragDropModule, CdkDrag],
+  imports: [DragDropModule],
   templateUrl: './b6.html',
   styleUrl: './b6.css',
 })
