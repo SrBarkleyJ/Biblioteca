@@ -2,16 +2,30 @@
 <header class="main-header">
   <div class="container">
     <div class="header-content">
-      <h1 class="site-title">
-        <span class="accent">CSS</span> Animations Lab
+      <h1 class="site-title fs-1">
+        CSS Animations Lab
       </h1>
-      <p class="site-description">
+      <h1 class="site-description fs-2">
         Mi colección personal de animaciones y efectos CSS
-      </p>
+      </h1>
     </div>
   </div>
 </header>
 
+<nav class="navbar">
+    <div class="navbar-nav flex-row">
+        <a class="btn fs-4 me-2"
+           routerLink="/contenedor1"
+           routerLinkActive="active">
+            Cards
+        </a>
+        <a class="btn fs-4 me-2"
+           routerLink="/contenedor2"
+           routerLinkActive="active">
+            Barras de carga
+        </a>
+    </div>
+</nav>
       <router-outlet></router-outlet>
     
 <!-- Footer Simple -->

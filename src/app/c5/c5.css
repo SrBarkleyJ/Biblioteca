@@ -3,13 +3,14 @@
   gap: 30px;
   align-items: stretch;
   padding-top: 20px;
-  height: auto; 
+  height: auto;
   min-height: 550px;
 }
 
+/* Sección de animación */
 .animation-section {
   flex: 3;
-  width:100%
+  width: 100%;
 }
 
 .animation-section h2 {
@@ -18,10 +19,11 @@
   color: #333;
 }
 
+/* Wrapper de tarjetas */
 .wrapper {
   height: 400px;
   width: 100%;
-  background-color: rgba(0, 255, 255, 0);
+  background-color: transparent;
   display: flex;
   gap: 20px;
   padding-top: 20px;
@@ -29,22 +31,22 @@
   align-items: center;
 }
 
+/* Cada tarjeta */
 .card {
+  position: relative; /* ← Necesario para posicionar el texto dentro */
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  filter: blur(0px);
-  transition: filter 1s ease-in-out;
+  overflow: hidden; /* ← Evita que el texto se salga */
+  border-radius: 10px;
 }
 
+/* Imagen dentro de la tarjeta */
 .card-image {
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .card-image img {
@@ -53,11 +55,33 @@
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: all 0.2s ease-in-out;
+  transition: filter 0.5s ease, transform 0.3s ease;
 }
- 
-.card:hover{
-    filter: blur(2px)
+
+/* Texto descriptivo oculto */
+.card-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Hover: efecto */
+.card:hover .card-image img {
+  filter: blur(2px) brightness(0.7);
+  transform: scale(1.05);
+}
+
+.card:hover .card-text {
+  opacity: 1;
+  z-index: 2;
 }
 
 /* Sección derecha - Carrusel de Capturas */
@@ -173,4 +197,33 @@
 .capturas-vertical::-webkit-scrollbar-thumb {
   background: #c1c1c1;
   border-radius: 3px;
+}
+@media (max-width: 768px) {
+
+  /* Cambiar layout a columna */
+  .container-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Mostrar solo 2 tarjetas */
+  .wrapper .card:nth-child(n+3) {
+    display: none;
+  }
+
+  /* Centrar y dar más presencia a las imágenes visibles */
+  .wrapper .card {
+    flex: 0 1 45%;
+    max-width: 200px;
+  }
+
+  .animation-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .capturas-sidebar {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
 }

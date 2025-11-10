@@ -26,10 +26,10 @@
   padding-top: 20px;
   justify-content: center;
   align-items: center;
+  
 }
 
-/* Tus estilos existentes para la animación */
-.tarjeta {
+.card {
   height: 100%;
   flex: 1;
   display: flex;
@@ -37,17 +37,19 @@
   align-items: center;
   cursor: pointer;
   transition: all 0.8s ease-in-out;
+  
 }
 
-.tarjeta-image {
+.card-image {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+ 
 }
 
-.tarjeta-image img {
+.card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -55,14 +57,15 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   filter: grayscale(1);
   transition: filter 0.8s ease-in-out;
+   
  
 }
 
-.tarjeta:hover {
+.card:hover {
   flex: 8;
 }
 
-.tarjeta img:hover {
+.card img:hover {
   filter: grayscale(0);
 }
 
@@ -180,4 +183,32 @@
 .capturas-vertical::-webkit-scrollbar-thumb {
   background: #c1c1c1;
   border-radius: 3px;
+}@media (max-width: 768px) {
+
+  /* Cambiar layout a columna */
+  .container-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Mostrar solo 2 tarjetas */
+  .wrapper .card:nth-child(n+3) {
+    display: none;
+  }
+
+  /* Centrar y dar más presencia a las imágenes visibles */
+  .wrapper .card {
+    flex: 0 1 45%;
+    max-width: 200px;
+  }
+
+  .animation-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .capturas-sidebar {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
 }

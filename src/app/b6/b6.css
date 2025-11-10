@@ -1,0 +1,97 @@
+.social-bar {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: #1a1a1a;
+    border-radius: 20px;
+    margin: 2rem;
+    overflow: hidden;
+}
+.contenedor {
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.social-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2d2d2d;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #444;
+    overflow: hidden;
+}
+
+.social-icon i {
+    font-size: 1.8rem;
+    color: #888;
+    transition: all 0.3s ease;
+    z-index: 2;
+    position: relative;
+}
+
+/* Efecto de llenado desde el centro */
+.fill-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 0%;
+    border-radius: 50%;
+    transition: all 0.7s ease;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* Colores de llenado */
+.twitter .fill-effect { background: #1da1f2; }
+.instagram .fill-effect { background: #e4405f; }
+.linkedin .fill-effect { background: #0a66c2; }
+.github .fill-effect { background: #6e5494; }
+.tiktok .fill-effect { background: #69c9d0; }
+
+/* Efecto hover - Expansión desde el centro */
+.social-icon:hover .fill-effect {
+    width: 150%;
+    height: 150%;
+}
+
+.social-icon:hover i {
+    color: white;   
+}
+
+.social-icon:hover {
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .social-bar {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .social-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .social-icon i {
+        font-size: 1.5rem;
+    }
+}

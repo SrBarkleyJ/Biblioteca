@@ -4,8 +4,8 @@
     <h2>Galería con Efecto Ampliacion y escala de grises</h2>
     <div class="wrapper">
       @for (item of imagenes; track $index) {
-        <div class="tarjeta">
-          <div class="tarjeta-image">
+        <div class="card">
+          <div class="card-image">
             <img [src]="item.image"
                  [alt]="item.name" 
                  class="img-fluid"

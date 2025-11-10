@@ -223,3 +223,33 @@
   background: #c1c1c1;
   border-radius: 3px;
 }
+@media (max-width: 768px) {
+
+  /* Cambiar layout a columna */
+  .container-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Mostrar solo 2 tarjetas */
+  .wrapper .flip-card:nth-child(n+2) {
+    display: none;
+    size: 1fr;
+  }
+
+  /* Centrar y dar más presencia a las imágenes visibles */
+  .wrapper .flip-card {
+    flex: 1;
+    max-width: 200px;
+  }
+
+  .animation-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .capturas-sidebar {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+}

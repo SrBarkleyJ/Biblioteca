@@ -11,6 +11,7 @@ interface CapturaItem {
 interface ImagenItem {
   name: string;
   image: string;
+  description: string
 }
 @Component({
   selector: 'app-c3',
@@ -21,14 +22,39 @@ interface ImagenItem {
 })
 export class C3 {
 
-  imagenes: ImagenItem[] = [
-    { name: 'Gojo', image: 'assets/gojo.jpg' },
-    { name: 'Ace', image: 'assets/ace.jpg' },
-    { name: 'Goku', image: 'assets/goku.jpg' },
-    { name: 'Rick', image: 'assets/rick.jpg' },
-    { name: 'Luffy', image: 'assets/luffy.jpg' },
-    { name: 'Joker', image: 'assets/joker.jpg' }
-  ];
+
+ imagenes: ImagenItem[] = [
+{ 
+    name: 'Gojo', 
+    image: 'assets/gojo.jpg',
+    description: 'El hechicero más poderoso del universo Jujutsu, conocido por su confianza y técnica Ilimitada.'
+  },
+  { 
+    name: 'Ace', 
+    image: 'assets/ace.jpg',
+    description: 'El hermano mayor de Luffy, portador de la llama Mera Mera no Mi y símbolo de libertad pirata.'
+  },
+  { 
+    name: 'Goku', 
+    image: 'assets/goku.jpg',
+    description: 'El Saiyan criado en la Tierra, amante de los desafíos y defensor incansable del universo.'
+  },
+  { 
+    name: 'Rick', 
+    image: 'assets/rick.jpg',
+    description: 'Un científico genio, excéntrico y autodestructivo que viaja por el multiverso con su nieto Morty.'
+  },
+  { 
+    name: 'Luffy', 
+    image: 'assets/luffy.jpg',
+    description: 'El capitán de los Sombrero de Paja, con un sueño inquebrantable de convertirse en el Rey de los Piratas.'
+  },
+  { 
+    name: 'Joker', 
+    image: 'assets/joker.jpg',
+    description: 'El agente del caos más temido de Gotham, maestro de la anarquía y la locura impredecible.'
+  }
+];
 
   capturas: CapturaItem[] = [
     { src: 'assets/imagenes/code3html1.png', alt: 'Código HTML', label: 'HTML' },

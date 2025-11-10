@@ -1,0 +1,146 @@
+.contenedor {
+justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.social-bar {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: #1a1a1a;
+  border-radius: 20px;
+  margin: 2rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* --- Iconos principales --- */
+.social-icon {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2d2d2d;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  overflow:visible;
+}
+
+.social-icon i {
+  font-size: 1.8rem;
+  color: #888;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+/* --- Tooltip (nombre de red social) --- */
+.tooltip {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translate(-50%, 0) scale(0.8);
+  background: #2d2d2d;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+/* Animación de entrada del tooltip */
+.social-icon:hover .tooltip {
+  bottom: 75px;
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1.2);
+}
+
+/* --- Colores específicos --- */
+.twitter:hover {
+  background: #1da1f2;
+  box-shadow: 0 0 20px #1da1f2, 0 0 40px #1da1f2, 0 0 60px #1da1f2;
+  border-color: #1da1f2;
+}
+
+.instagram:hover {
+  background: #e4405f;
+  box-shadow: 0 0 20px #e4405f, 0 0 40px #e4405f, 0 0 60px #e4405f;
+  border-color: #e4405f;
+}
+
+.linkedin:hover {
+  background: #0a66c2;
+  box-shadow: 0 0 20px #0a66c2, 0 0 40px #0a66c2, 0 0 60px #0a66c2;
+  border-color: #0a66c2;
+}
+
+.github:hover {
+  background: #6e5494;
+  box-shadow: 0 0 20px #6e5494, 0 0 40px #6e5494, 0 0 60px #6e5494;
+  border-color: #6e5494;
+}
+
+.tiktok:hover {
+  background: #69c9d0;
+  box-shadow: 0 0 20px #69c9d0, 0 0 40px #69c9d0, 0 0 60px #69c9d0;
+  border-color: #69c9d0;
+}
+
+/* --- Colores de tooltip según red --- */
+.twitter .tooltip { background: #1da1f2; box-shadow: 0 0 10px #1da1f2; }
+.instagram .tooltip { background: #e4405f; box-shadow: 0 0 10px #e4405f; }
+.linkedin .tooltip { background: #0a66c2; box-shadow: 0 0 10px #0a66c2; }
+.github .tooltip { background: #6e5494; box-shadow: 0 0 10px #6e5494; }
+.tiktok .tooltip { background: #69c9d0; box-shadow: 0 0 10px #69c9d0; }
+
+.social-icon:hover i {
+  color: white;
+  transform: scale(1.1);
+  filter: brightness(1.5) drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+/* --- Animación suave al cargar --- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .social-bar {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icon i {
+    font-size: 1.5rem;
+  }
+
+  .tooltip {
+    bottom: -8px;
+    font-size: 0.7rem;
+  }
+
+  .social-icon:hover .tooltip {
+    bottom: 60px;
+  }
+}
