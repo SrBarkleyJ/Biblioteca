@@ -1,0 +1,103 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background: linear-gradient(135deg, #0a0a16 0%, #1a1a2e 100%);
+    border-radius: 15px;
+    padding: 40px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(105, 201, 208, 0.2);
+}
+
+.loading-bar {
+    display: flex;
+    height: 68px;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.loading-dot {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    animation: dotPulse 1.5s infinite ease-in-out;
+    position: relative;
+}
+
+/* Colores para los puntos */
+.loading-dot.cyan {
+    --dot-color: #69c9d0;
+    --dot-glow: #25f4ee;
+}
+
+.loading-dot.pink {
+    --dot-color: #ff69b4;
+    --dot-glow: #ff1493;
+}
+
+.loading-dot.yellow {
+    --dot-color: #ffd700;
+    --dot-glow: #ffff00;
+}
+
+/* Animación reutilizable para todos los puntos */
+@keyframes dotPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+        box-shadow: 
+            0 0 10px var(--dot-color),
+            inset 0 0 5px var(--dot-color);
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+        box-shadow: 
+            0 0 20px var(--dot-color),
+            0 0 30px var(--dot-glow),
+            inset 0 0 10px var(--dot-color);
+    }
+}
+
+/* Efectos de respaldo para navegadores que no soportan variables CSS */
+.loading-dot.cyan {
+    background-color: #69c9d0;
+}
+
+.loading-dot.pink {
+    background-color: #ff69b4;
+}
+
+.loading-dot.yellow {
+    background-color: #ffd700;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .loading-container {
+        padding: 30px 15px;
+        min-height: 250px;
+    }
+    
+    .loading-title {
+        font-size: 1.5rem;
+    }
+    
+    .loading-bar {
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    
+    .loading-dot {
+        width: 20px;
+        height: 20px;
+    }
+}
