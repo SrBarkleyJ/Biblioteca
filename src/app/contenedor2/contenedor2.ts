@@ -4,6 +4,7 @@ import { B2 } from "../b2/b2";
 import { B3 } from "../b3/b3";
 import { B4 } from "../b4/b4";
 import { B5 } from "../b5/b5";
+
 import {B7} from "../b7/b7"
 @Component({
   selector: 'app-contenedor2',
@@ -14,4 +15,3 @@ import {B7} from "../b7/b7"
 export class Contenedor2 {
 
 }
-

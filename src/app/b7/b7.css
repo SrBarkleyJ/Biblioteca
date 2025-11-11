@@ -2,8 +2,9 @@
      justify-content: center;
     align-items: center;
 }
-h2{
+h2 {
     text-align: center;
+    color: #25f4ee;
 }
 
 .social-bar {
