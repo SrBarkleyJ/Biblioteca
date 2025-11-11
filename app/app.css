@@ -1,0 +1,99 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  max-width: 100vw;
+  background-color: #252525;
+}
+
+.main-header {
+  background-image: url('/assets/parallax.jpg');
+  background-size:cover;
+  background-position-y: center;
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+/* Esto hace que el router-outlet ocupe el espacio restante */
+router-outlet {
+  display: block;
+  flex: 1;
+  
+}
+
+/* O si prefieres un contenedor flex */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-footer {
+  background: #606060;
+  padding: 2rem 0;
+  text-align: center;
+  color: #a5a2a2;
+  margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+h1{
+ font-weight: bold;
+  text-align: center;
+  background: linear-gradient(
+    270deg,
+    #00ffff,
+    #0066ff,
+    #cc00ff
+  );
+  background-size: 800% 800%;
+ -webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  animation: gradientShift 10s linear infinite;
+  overflow: hidden;
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar-nav {
+    padding-left: 10px;
+}
+
+.navbar-nav a {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 255, 94, 0.456);
+    border: none;
+    transition: color 0.3s ease;
+    z-index: 1;
+    color:white
+}
+
+.navbar-nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #cf1313a2;
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.navbar-nav a:hover::before {
+    left: 0;
+}
+
+.navbar-nav a:hover {
+    
+    color: white; 
+}
