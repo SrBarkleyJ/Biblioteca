@@ -5,10 +5,11 @@ import { A3 } from "../a3/a3";
 import { A4 } from "../a4/a4";
 import { A5 } from "../a5/a5";
 import { A6 } from "../a6/a6";
+import { A7 } from "../a7/a7";
 
 @Component({
   selector: 'app-contenedor3',
-  imports: [A1, A2, A3, A4, A5, A6],
+  imports: [A1, A2, A3, A4, A5, A6, A7],
   templateUrl: './contenedor3.html',
   styleUrl: './contenedor3.css',
 })
