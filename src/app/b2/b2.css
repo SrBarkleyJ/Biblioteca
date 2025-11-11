@@ -103,14 +103,13 @@ h2 {
 }
 
 /* Colores del tooltip según red */
-.facebook .tooltip { background: linear-gradient(90deg, #1877f2, #4a90e2); }
+
 .twitter .tooltip { background: linear-gradient(90deg, #1da1f2, #4ab3f2); }
 .instagram .tooltip { background: linear-gradient(90deg, #e4405f, #fd1d1d); }
-.youtube .tooltip { background: linear-gradient(90deg, #ff0000, #ff3333); }
 .linkedin .tooltip { background: linear-gradient(90deg, #0a66c2, #2977c9); }
 .github .tooltip { background: linear-gradient(90deg, #6e5494, #8a63a2); }
 .tiktok .tooltip { background: linear-gradient(90deg, #69c9d0, #25f4ee); }
-.discord .tooltip { background: linear-gradient(90deg, #5865f2, #7289da); }
+
 
 /* Efecto hover del tooltip CORREGIDO */
 .social-icon:hover .tooltip {
@@ -119,19 +118,6 @@ h2 {
     bottom: -50px; /* Posición final */
 }
 
-/* Flecha del tooltip */
-.tooltip::after {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid currentColor;
-}
 
 /* Animación de bounce mejorada */
 @keyframes tooltipBounce {

@@ -1,3 +1,30 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background: linear-gradient(135deg, #0a1a3a 0%, #1a2b4a 50%, #0f1525 100%);
+    border-radius: 15px;
+    padding: 40px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 150, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+.loading-bar {
+    display: flex;
+    height: 68px;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow:hidden;
+}
 .hypnotoad-effect {
     position: relative;
     width: 400px;
@@ -125,6 +152,8 @@ body {
 
 /* Texto final */
 .all-glory {
+    position: absolute;
+    top:60%;
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
@@ -143,4 +172,23 @@ body {
     0% { color: #00ff00; transform: scale(1); }
     50% { color: #ff00ff; transform: scale(1.05); }
     100% { color: #00ff00; transform: scale(1); }
+}
+@media (max-width: 1200px) {
+  .loading-container {
+    width: 90vw;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .loaders-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-container {
+    width: 95vw;
+
+  }
 }

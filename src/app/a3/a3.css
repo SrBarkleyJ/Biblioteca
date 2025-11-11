@@ -74,3 +74,22 @@
         box-shadow: 0 0 15px var(--color);
     }
 }
+@media (max-width: 1200px) {
+  .loading-container {
+    width: 90vw;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .loaders-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-container {
+    width: 95vw;
+
+  }
+}
