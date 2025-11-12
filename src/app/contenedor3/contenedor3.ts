@@ -8,10 +8,12 @@ import { A6 } from "../a6/a6";
 import { A7 } from "../a7/a7";
 import { A8 } from "../a8/a8";
 import { A9 } from "../a9/a9";
+import { A10 } from "../a10/a10";
+import { A11 } from "../a11/a11";
 
 @Component({
   selector: 'app-contenedor3',
-  imports: [A1, A2, A3, A4, A5, A6, A7, A8, A9],
+  imports: [A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11],
   templateUrl: './contenedor3.html',
   styleUrl: './contenedor3.css',
 })

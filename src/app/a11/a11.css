@@ -1,0 +1,217 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    background: linear-gradient(135deg, #1a0a0a 0%, #4a1a1a 50%, #2a0a0a 100%);
+    border-radius: 15px;
+    padding: 40px 20px;
+    box-shadow: 0 10px 30px rgba(255, 50, 0, 0.3);
+    border: 1px solid rgba(255, 100, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.bart {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+}
+
+.loading-text {
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.fire-text {
+    color: #ff6600;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: bold;
+    text-shadow: 
+        0 0 20px #ff3300,
+        0 0 40px #ff0000;
+    animation: textIgnite 2s infinite alternate;
+    font-family: 'Arial Black', sans-serif;
+    letter-spacing: 3px;
+}
+
+.company-name {
+    color: #ffaa00;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    margin-top: 10px;
+    text-shadow: 0 0 10px #ff6600;
+    animation: subtitleGlow 3s infinite alternate;
+}
+
+.spray-particles {
+    position: absolute;
+    left: 36%;
+    top: 53%;
+    transform: translateY(-50%);
+}
+
+/* Partículas individuales de pintura */
+.paint-particle {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    background: #fbff00;
+    border-radius: 50%;
+    animation: sprayEffect 1.5s infinite ease-out;
+    animation-delay: var(--delay);
+    opacity: 0;
+    box-shadow: 
+        0 0 5px currentColor,
+        inset 0 0 2px rgba(255,255,255,0.5);
+}
+
+/* Variación de colores graffiti */
+.paint-particle:nth-child(odd) {
+    background: #fbff00;
+    animation-duration: 1.2s;
+}
+
+.paint-particle:nth-child(3n) {
+    background: #ffff00;
+    animation-duration: 1.8s;
+}
+
+.paint-particle:nth-child(4n) {
+    background: #fbff00;
+    animation-duration: 1.4s;
+}
+
+.paint-particle:nth-child(5n) {
+    background: #fbff00;
+    animation-duration: 1.6s;
+}
+
+/* ANIMACIÓN CORREGIDA - Usando viewport units para ser responsive */
+@keyframes sprayEffect {
+    0% {
+        opacity: 0;
+        transform: 
+            translate(0, 0) 
+            scale(1)
+            rotate(0deg);
+        filter: blur(0px);
+    }
+    10% {
+        opacity: 1;
+        transform: 
+            translate(calc(5px + 1vw), calc(-2px - 0.5vh)) 
+            scale(2)
+            rotate(5deg);
+        filter: blur(0.5px);
+    }
+    30% {
+        opacity: 0.9;
+        transform: 
+            translate(calc(-40px - 5vw), calc(-8px - 1vh)) 
+            scale(4)
+            rotate(10deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: 
+            translate(calc(-80px - 8vw), calc(-15px - 2vh)) 
+            scale(5)
+            rotate(15deg);
+        filter: blur(1px);
+    }
+    70% {
+        opacity: 0.6;
+        transform: 
+            translate(calc(-120px - 10vw), calc(-20px - 2.5vh)) 
+            scale(7)
+            rotate(20deg);
+    }
+    90% {
+        opacity: 0.3;
+        transform: 
+            translate(calc(-160px - 12vw), calc(-25px - 3vh)) 
+            scale(8)
+            rotate(25deg);
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 0;
+        transform: 
+            translate(calc(-200px - 15vw), calc(-30px - 3.5vh)) 
+            scale(11)
+            rotate(30deg);
+        filter: blur(3px);
+    }
+}
+
+/* Versión alternativa más simple */
+@keyframes sprayEffectSimple {
+    0% {
+        opacity: 0;
+        transform: translateX(0) translateY(0) scale(0.8);
+    }
+    20% {
+        opacity: 1;
+        transform: translateX(-20px) translateY(-5px) scale(2);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(-60px) translateY(-12px) scale(4);
+    }
+    80% {
+        opacity: 0.4;
+        transform: translateX(-100px) translateY(-18px) scale(6);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-140px) translateY(-22px) scale(8);
+    }
+}
+
+/* O usa esta animación si la anterior no funciona */
+.paint-particle {
+    animation: sprayEffectSimple 1.5s infinite ease-out;
+    animation-delay: var(--delay);
+}
+
+/* Media queries para ajustes específicos */
+@media (max-width: 1200px) {
+    .spray-particles {
+        left: 45%;
+    }
+    
+    @keyframes sprayEffect {
+        50% {
+            transform: translate(calc(-60px - 6vw), calc(-12px - 1.5vh)) scale(4);
+        }
+        100% {
+            transform: translate(calc(-150px - 12vw), calc(-25px - 3vh)) scale(7);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .spray-particles {
+        left: 48%;
+        top: 52%;
+    }
+    
+    @keyframes sprayEffect {
+        50% {
+            transform: translate(calc(-40px - 4vw), calc(-10px - 1vh)) scale(3);
+        }
+        100% {
+            transform: translate(calc(-100px - 8vw), calc(-20px - 2vh)) scale(5);
+        }
+    }
+}
