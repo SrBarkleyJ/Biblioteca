@@ -107,7 +107,7 @@
         filter: blur(0px);
     }
     10% {
-        opacity: 1;
+        opacity: 0;
         transform: 
             translate(calc(5px + 1vw), calc(-2px - 0.5vh)) 
             scale(2)
@@ -115,11 +115,19 @@
         filter: blur(0.5px);
     }
     30% {
-        opacity: 0.9;
+        opacity: 0.1;
         transform: 
             translate(calc(-40px - 5vw), calc(-8px - 1vh)) 
             scale(4)
             rotate(10deg);
+    }
+     40% {
+        opacity: 0.8;
+        transform: 
+            translate(calc(-80px - 8vw), calc(-15px - 2vh)) 
+            scale(5)
+            rotate(15deg);
+        filter: blur(1px);
     }
     50% {
         opacity: 0.8;
@@ -151,52 +159,6 @@
             scale(11)
             rotate(30deg);
         filter: blur(3px);
-    }
-}
-
-/* Versión alternativa más simple */
-@keyframes sprayEffectSimple {
-    0% {
-        opacity: 0;
-        transform: translateX(0) translateY(0) scale(0.8);
-    }
-    20% {
-        opacity: 1;
-        transform: translateX(-20px) translateY(-5px) scale(2);
-    }
-    50% {
-        opacity: 0.8;
-        transform: translateX(-60px) translateY(-12px) scale(4);
-    }
-    80% {
-        opacity: 0.4;
-        transform: translateX(-100px) translateY(-18px) scale(6);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-140px) translateY(-22px) scale(8);
-    }
-}
-
-/* O usa esta animación si la anterior no funciona */
-.paint-particle {
-    animation: sprayEffectSimple 1.5s infinite ease-out;
-    animation-delay: var(--delay);
-}
-
-/* Media queries para ajustes específicos */
-@media (max-width: 1200px) {
-    .spray-particles {
-        left: 45%;
-    }
-    
-    @keyframes sprayEffect {
-        50% {
-            transform: translate(calc(-60px - 6vw), calc(-12px - 1.5vh)) scale(4);
-        }
-        100% {
-            transform: translate(calc(-150px - 12vw), calc(-25px - 3vh)) scale(7);
-        }
     }
 }
 

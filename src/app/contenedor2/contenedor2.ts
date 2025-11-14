@@ -6,9 +6,12 @@ import { B4 } from "../b4/b4";
 import { B5 } from "../b5/b5";
 
 import {B7} from "../b7/b7"
+import { B8 } from "../b8/b8";
+import { B6 } from "../b6/b6";
+import { B9 } from "../b9/b9";
 @Component({
   selector: 'app-contenedor2',
-  imports: [B1, B2, B3, B4, B5, B7],
+  imports: [B1, B2, B3, B4, B5, B7, B8, B6, B9],
   templateUrl: './contenedor2.html',
   styleUrl: './contenedor2.css',
 })
