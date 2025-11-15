@@ -5,6 +5,7 @@
   display: grid;
   gap: 2rem;
   margin-bottom: 3rem;
+  margin-inline: 20px;
   grid-template-columns: repeat(2, 1fr);
 }
 .row2{

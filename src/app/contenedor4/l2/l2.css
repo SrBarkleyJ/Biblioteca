@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-
 :host {
   display: block;
-  background: #f6f5f7;
+  background: linear-gradient(to right, #553cfca4, #051773);
   font-family: 'Montserrat', sans-serif;
   height: 55vh;
-  padding: 20px;
+  padding-top: 3%;
+  border-radius: 30px;
+  perspective: 1200px; /* Perspectiva para el efecto 3D */
 }
 
 :host * {
