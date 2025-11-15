@@ -1,0 +1,190 @@
+.container-main {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  padding-top: 20px;
+  height: auto; 
+  min-height: 550px;
+  overflow: visible;
+}
+
+.animation-section {
+  flex: 2;
+  width:100%;
+  overflow:hidden
+}
+
+.animation-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.wrapper {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  grid-auto-flow: column;
+  grid-auto-columns: 400px;
+  gap: 20px;
+  align-items: center;
+  overflow: hidden; 
+  animation: animate 20s linear infinite;
+  width: max-content; 
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px)); 
+  }
+}
+
+.card {
+  height: 100%;
+  width:250px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-image img {
+  filter: brightness(1.1);
+}
+
+/* Sección derecha - Carrusel de Capturas */
+.capturas-sidebar {
+  flex: 1;
+  max-width: 300px;
+  height: 420px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+ margin: auto 0;
+}
+
+.capturas-sidebar h3 {
+  text-align: center;
+  margin: 0;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.capturas-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.captura-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.captura-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.captura-item.active {
+  background: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+.captura-thumb {
+  width: 50px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.captura-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Captura ampliada */
+.captura-ampliada {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 0px;
+  border-radius: 15px;
+  box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+  z-index: 1000;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+.captura-grande {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.btn-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Scrollbar para el carrusel vertical */
+.capturas-vertical::-webkit-scrollbar {
+  width: 6px;
+}
+
+.capturas-vertical::-webkit-scrollbar-track {
+  background: #ffffff00;
+  border-radius: 3px;
+}
+
+.capturas-vertical::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}

@@ -1,0 +1,138 @@
+.social-bar {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: #000000;
+  border-radius: 20px;
+  margin: 2rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.contenedor {
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+    text-align: center;
+    color: #25f4ee;
+}
+
+/* ======== ICONOS CON EFECTO COMBINADO ======== */
+.social-icon {
+  position: relative;
+  background: transparent;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 35px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 0px solid #444;
+  overflow:hidden;
+}
+
+.social-icon i {
+  font-size: 1.8rem;
+  color: #888888;
+  transition: all 0.3s ease;
+  z-index: 2; /* Icono por encima de todo */
+  position: relative;
+}
+
+.llenado {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0; /* cubre toda la altura */
+  width: 0%;
+  height: 100%;
+  border-radius: 35px;
+  transition: width 0.4s ease;
+  z-index: 1;
+  transform-origin: left; /* <-- clave para la dirección del llenado */
+}
+
+/* Colores de llenado */
+.twitter .llenado { background: linear-gradient(0deg, #1da1f2, #4ab3f2); }
+.instagram .llenado { background: linear-gradient(0deg, #e4405f, #fd1d1d); }
+.linkedin .llenado { background: linear-gradient(0deg, #0a66c2, #2977c9); }
+.github .llenado { background: linear-gradient(0deg, #6e5494, #8a63a2); }
+.tiktok .llenado { background: linear-gradient(0deg, #69c9d0, #25f4ee); }
+
+/* ======== HOVER COMBINADO ======== */
+.social-icon:hover .llenado {
+  width: 100%;
+}
+
+.social-icon:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  top: -50px; /* Posición final un poco más arriba */
+}
+
+.social-icon:hover i {
+  color: white;
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));
+  animation: spin 0.6s ease-in-out;
+}
+
+.social-icon:hover {
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ======== ANIMACIONES MEJORADAS ======== */
+@keyframes llenar {
+  from {
+    transform: rotate(0deg) scale(1.1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
+
+
+
+.social-icon.auto-fill{
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  top: -70px;
+  animation: pulseTooltip 2s ease-in-out infinite;
+}
+
+@keyframes autoFill {
+  0%, 100% {
+    height: 10%;
+    opacity: 0.7;
+  }
+  50% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) {
+  .social-bar {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .social-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+  }
+
+  .social-icon i {
+    font-size: 1.5rem;
+  }
+}
