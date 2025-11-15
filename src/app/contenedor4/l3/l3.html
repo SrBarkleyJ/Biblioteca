@@ -1,0 +1,29 @@
+<div class="form-structor">
+  <!-- Signup: slide-up cuando NO está activo (isLoginActive = true) -->
+  <div class="signup" [class.slide-up]="isLoginActive">
+    <h2 class="form-title" (click)="switchToSignup()">
+        <span>or</span>Sign in
+      </h2>
+    <div class="form-holder">
+      <input type="text" class="input" placeholder="Name" />
+      <input type="email" class="input" placeholder="Email" />
+      <input type="password" class="input" placeholder="Password" />
+    </div>
+    <button class="submit-btn">Sign up</button>
+  </div>
+  
+  <!-- Login: slide-up cuando está activo (isLoginActive = false) -->
+  <div class="login" [class.slide-up]="!isLoginActive">
+    <div class="center">
+      <h2 class="form-title" (click)="switchToLogin()">
+      Log in
+    </h2>
+      
+      <div class="form-holder">
+        <input type="email" class="input" placeholder="Email" />
+        <input type="password" class="input" placeholder="Password" />
+      </div>
+      <button class="submit-btn">Log in</button>
+    </div>
+  </div>
+</div>
