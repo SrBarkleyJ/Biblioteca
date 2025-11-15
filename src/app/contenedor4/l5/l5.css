@@ -22,6 +22,7 @@ img{
   max-width: 400px; /* ← Ancho máximo */
   max-height: 500px; /* ← Alto máximo */
   position: relative;
+  padding-left:30px;
   transform-style: preserve-3d;
   transform: translateZ(-150px);
   transition: transform 0.7s ease-in-out;
