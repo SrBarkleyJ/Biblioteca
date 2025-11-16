@@ -71,6 +71,7 @@ h1 {
   justify-content: center;
   gap: 1rem;
   padding-left: 1rem;
+  padding-bottom:2%;
   margin: 0;
   list-style: none;
 }
@@ -114,6 +115,10 @@ h1 {
   transform: translateY(-2px);
 }
 
+.navbar img{
+  height: 40px;
+  color: white;
+}
 /* ===== MEDIA QUERIES ===== */
 
 /* Tablets */
