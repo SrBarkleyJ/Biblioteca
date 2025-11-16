@@ -1,0 +1,47 @@
+<div class="wrapper">
+    <img src="/assets/uni.jpg">
+    <div class="rec-prism" [ngClass]="currentFace">
+        
+        <!-- FRONT: LOGIN -->
+        <div class="face rec-prism-front">
+            <div class="form-container">
+                <h2>Login</h2><button (click)="show('back')">Sign Up</button>
+                <div class="field-wrapper">
+                    <input type="text" required placeholder=" " />
+                    <label>Username</label>
+                </div> 
+                <div class="field-wrapper">
+                    <input type="password" required placeholder=" " />
+                    <label>Password</label>
+                </div>
+                <div class="psw">Forgot Password?</div>
+                <div class="field-wrapper">
+                    <input type="submit" value="Login" (click)="show('back')"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- BACK: SIGN UP -->
+        <div class="face back">
+            <div class="form-container">
+                <h2>Sign Up</h2><button (click)="show('front')">Log in</button>
+                <div class="field-wrapper">
+                    <input type="text" required placeholder=" " />
+                    <label>Username</label>
+                </div>
+                <div class="field-wrapper">
+                    <input type="email" required placeholder=" " />
+                    <label>Email</label>
+                </div>
+                <div class="field-wrapper">
+                    <input type="password" required placeholder=" " />
+                    <label>Password</label>
+                </div>
+                <div class="field-wrapper">
+                    <input type="submit" value="Create Account"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,54 @@
+.container {
+    position: relative;
+    width: 700px; /* ajusta al tamaño que quieras */
+}
+
+.tv {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 3;
+}
+
+.pantalla {
+    position: absolute;
+    z-index: 2;
+
+    /* POSICIÓN EXACTA DEL HUECO DE LA TV */
+    top: 7%;     
+    left: 8%;     
+
+    width: 83%;   
+    height: 72%; 
+
+    object-fit: cover;  
+    border-radius: 12px;
+}
+
+.bi {
+    font-size: 40px; /* tamaño del icono */
+}
+
+.caja-botones{
+    position: absolute;
+    width: 12%;
+    height:32%;
+    z-index:4;
+    left: 83%;
+    top:46%;
+    display:grid;
+}
+
+.botonMas{
+    width:80%;
+    height: 100%;
+    margin-left: 10%;
+    border-radius: 50%;
+}
+.botonMenos{
+    width:80%;
+    height: 100%;
+    margin-left: 10%;
+    border-radius: 50%;
+}

@@ -1,0 +1,286 @@
+img {
+  position: absolute;
+  right: -15%;
+  top: -10%;
+  width: 115%;
+  height: 200%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  text-align: left;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding-left: 7%;
+    border-radius: 5%;
+}
+
+.rec-prism {
+  width: 90%;
+  height: 80%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease-in-out;
+  margin: auto;
+}
+
+/* ROTACIONES DEL PRISMA */
+.rec-prism.front {
+  transform: rotateY(0deg);
+}
+
+.rec-prism.back {
+  transform: rotateY(-180deg);
+}
+
+/* ========== CARAS DEL PRISMA ========== */
+.face {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente el contenido */
+  align-items: center; /* Centra horizontalmente el contenido */
+  padding: 5%; /* Padding uniforme */
+  background: rgb(250, 250, 250);
+  border: 3px solid rgba(255, 0, 0, 0.96);
+  border-radius: 15px;
+  color: rgb(0, 0, 0);
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor del formulario para mejor centrado */
+.form-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cara FRONT (Login) */
+.face.rec-prism-front {
+  transform: rotateY(0deg) translateZ(200px);
+}
+
+/* Cara BACK (Sign Up) */
+.face.back {
+  transform: rotateY(180deg) translateZ(200px);
+  translate: 10%;
+}
+
+/* ========== ESTILOS DEL FORMULARIO ========== */
+.face h2 {
+  font-size: clamp(1.5em, 4vw, 2em);
+  color: green;
+  text-align: center;
+  margin-bottom: 8%;
+  font-weight: 700;
+  width: 100%;
+}
+
+.field-wrapper {
+  margin-top: 6%;
+  position: relative;
+  width: 90%; /* Ahora ocupa el 100% del form-container */
+}
+
+.field-wrapper label {
+  position: absolute;
+  pointer-events: none;
+  font-size: clamp(0.8em, 2vw, 1em);
+  top: 50%;
+  left: 1%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  color: #666;
+  background: rgb(250, 250, 250);
+  padding: 0 8px;
+}
+
+.field-wrapper input[type="text"],
+.field-wrapper input[type="password"],
+.field-wrapper input[type="email"] {
+  width: 100%;
+  border: 2px solid #ddd;
+  background: transparent;
+  line-height: 2.5em;
+  color: #222;
+  padding: 0 15px;
+  font-size: clamp(0.9em, 2.5vw, 1em);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.field-wrapper input:focus {
+  outline: none;
+  border-color: green;
+  box-shadow: 0 0 0 3px rgba(0, 128, 0, 0.1);
+}
+
+.field-wrapper input::placeholder {
+  color: transparent;
+}
+
+/* Label flotante */
+.field-wrapper input:focus + label,
+.field-wrapper input:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 0.75em;
+  color: green;
+  font-weight: 600;
+}
+
+/* Botón Submit */
+.field-wrapper input[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  background: green;
+  line-height: 2.5em;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0;
+  margin-top: 8%;
+  font-size: clamp(1em, 3vw, 1.1em);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.field-wrapper input[type="submit"]:hover {
+  background: #006400;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 128, 0, 0.3);
+}
+
+/* Forgot password */
+.psw {
+  text-align: right;
+  margin-top: 4%;
+  color: #666;
+  cursor: pointer;
+  font-size: clamp(0.8em, 2vw, 0.9em);
+  transition: color 0.3s ease;
+  width: 100%;
+}
+
+.psw:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+/* ========== MEDIA QUERIES MEJORADAS ========== */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 3%;
+    height: 60vh;
+  }
+  
+  .rec-prism {
+    width: 95%;
+    height: 90%;
+  }
+  
+  .face {
+    padding: 8% 5%;
+  }
+  
+  .form-container {
+    width: 90%;
+    max-width: 280px;
+  }
+  
+  .face h2 {
+    margin-bottom: 10%;
+  }
+  
+  .field-wrapper {
+    margin-top: 8%;
+  }
+  
+  img {
+    right: -25%;
+    top: -5%;
+    width: 140%;
+    height: 110%;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 2%;
+    height: 70vh;
+  }
+  
+  .rec-prism {
+    width: 96%;
+    height: 95%;
+  }
+  
+  .face {
+    padding: 10% 6%;
+  }
+  
+  .form-container {
+    width: 95%;
+    max-width: 250px;
+  }
+  
+  .face h2 {
+    margin-bottom: 12%;
+    font-size: clamp(1.3em, 5vw, 1.8em);
+  }
+  
+  .field-wrapper {
+    margin-top: 10%;
+  }
+  
+  .field-wrapper input[type="submit"] {
+    margin-top: 12%;
+    line-height: 2.8em;
+  }
+  
+  .field-wrapper input[type="text"],
+  .field-wrapper input[type="password"],
+  .field-wrapper input[type="email"] {
+    line-height: 2.2em;
+  }
+  
+  img {
+    right: -35%;
+    top: 0;
+    width: 160%;
+    height: 120%;
+  }
+}
+
+/* Para pantallas muy grandes */
+@media (min-width: 1200px) {
+  .rec-prism {
+    height: 70%;
+    max-width: 500px;
+  }
+  
+  .face {
+    padding: 6% 4%;
+  }
+  
+  .form-container {
+    max-width: 350px;
+  }
+}
+
+/* Asegurar que el body ocupe toda la altura */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

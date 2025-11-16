@@ -3,8 +3,9 @@
   display: block;
   background: linear-gradient(to right, #f78a77a4, #f75178);
   font-family: 'Montserrat', sans-serif;
-  height: 55vh;
+  height: 100%;
   padding-top: 3%;
+  padding-bottom: 3%;
   border-radius: 30px;
   perspective: 1200px; /* Perspectiva para el efecto 3D */
 }

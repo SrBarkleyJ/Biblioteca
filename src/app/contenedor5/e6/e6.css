@@ -1,0 +1,74 @@
+.spiral-orbit {
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  position: relative;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #c00;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 3s infinite linear;
+}
+
+.ring:nth-child(1) {
+  width: 180px;
+  height: 180px;
+  animation-duration: 4s;
+}
+
+.ring:nth-child(2) {
+  width: 140px;
+  height: 140px;
+  animation-duration: 3s;
+  animation-direction: reverse;
+}
+
+.ring:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  animation-duration: 2s;
+}
+
+.orbiter-uno {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgb(105, 225, 0);
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px #f00;
+}
+.orbiter-dos {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgb(255, 230, 0);
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px #f00;
+}
+.orbiter-tres {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #c00;
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px #f00;
+}
+
+@keyframes orbit {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

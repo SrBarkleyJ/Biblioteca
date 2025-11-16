@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0091ff, #1579ff);
+  overflow: hidden;
+}
+
+.liquid-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* BLOBBY LIQUID */
+.liquid-blob {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #6aff00, #ffe601);
+  border-radius: 50%;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  filter: drop-shadow(0 0 30px rgb(94, 255, 0));
+  
+  animation: liquidMorph 6s ease-in-out infinite,
+             floatMove 5s ease-in-out infinite alternate;
+}
+
+/* MORPHING (forma líquida) */
+@keyframes liquidMorph {
+  0% {
+    border-radius: 60% 40% 55% 45% / 55% 45% 60% 50%;
+  }
+  25% {
+    border-radius: 50% 60% 45% 55% / 60% 50% 40% 60%;
+  }
+  50% {
+    border-radius: 40% 55% 65% 45% / 50% 65% 45% 55%;
+  }
+  75% {
+    border-radius: 55% 45% 50% 60% / 55% 40% 60% 45%;
+  }
+  100% {
+    border-radius: 60% 40% 55% 45% / 55% 45% 60% 50%;
+  }
+}
+
+/* MOVIMIENTO SUAVE */
+@keyframes floatMove {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(12px, -18px) scale(1.05);
+  }
+  100% {
+    transform: translate(-10px, 10px) scale(0.97);
+  }
+}
